@@ -14,6 +14,8 @@ Este repositorio es una guía para ir subiendo cada clase que hagamos juntos, po
 
 - Una carpeta **Alumno** que es para que la utilicen ustedes y que puede contener las siguientes carpetas:
 
+  * **Mini ejercicio**: Acá pueden hacer la resolución del mini ejercicio planteado en clase, en algunos casos les voy a subir parte del ejercicio para que solo tengan que completar una parte.
+
   * **Ejercicio**: Acá pueden hacer la resolución del ejercicio planteado en clase, en algunos casos les voy a subir parte del ejercicio para que solo tengan que completar una parte.
 
   * **Desafío**: Acá pueden hacer la resolución del desafío, también en algunos casos les voy a subir parte del ejercicio para que solo tengan que completar una parte.
