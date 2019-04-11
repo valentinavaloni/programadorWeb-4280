@@ -57,3 +57,53 @@ console.log('Init app')
 // if (!(number2 % 3)) {
 //   console.log('El número es multiplo de tres')
 // }
+
+// var number = prompt('Ingresá un número')
+
+// if (!(number % 2)) {
+//   console.log('Es par')
+// } else {
+//   console.log('No es par')
+// }
+
+// && AND
+
+// var number1 = prompt('Ingresá un número')
+
+// if (number1 >= 5 && number1 <= 25) {
+//   console.log('El valor está entre 5 y 25')
+// }
+
+// var userName = prompt('Ingresá tú usuario')
+
+// var password = prompt('Ingresá tñu contraseña')
+
+// if (userName === 'adrian@getsirena.com' && password === '1234') {
+//   console.log('Ingresá al sitio')
+// }
+
+// var color = prompt('Ingresé un color')
+
+// if (color === 'red' || color === 'white' && color === 'black') {
+//   console.log('Alguno de los colores de River')
+// }
+
+var color = prompt('Ingresé un color')
+
+switch (color) {
+  case 'red':
+    console.log('Rojo')
+    break
+
+  case 'white':
+    console.log('Blanco')
+    break
+
+  case 'blue':
+    console.log('Azul')
+    break
+
+  default:
+    console.log('Ingresó un color invalido')
+    break
+}
