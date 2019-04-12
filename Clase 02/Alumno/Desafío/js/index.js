@@ -11,6 +11,7 @@ if (genero === 'Sr.') {
     message = genero
   } else {
     if (genero === 'Sx')
+      message = genero
   }
 }
 
