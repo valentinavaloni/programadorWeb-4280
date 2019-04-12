@@ -6,10 +6,15 @@ switch (dia) {
   case 'miercoles':
   case 'jueves':
   case 'viernes':
-    console.log('no es un día valido')
+    console.log('es un día valido')
     break
   case 'sabado':
   case 'domingo':
-    console.log('hábil')
+    console.log('fin de semana')
     break
+
+  default:
+    console.log('no es un día valido')
+    break
+
 }
