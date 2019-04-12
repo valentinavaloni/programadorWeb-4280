@@ -4,13 +4,13 @@ var genero = prompt('Ingresé su genero')
 
 var edad = prompt('Ingresé su edad')
 
-if (genero === 'Sr.') {
+if (genero === 'Sr. ') {
   message = genero
 } else {
-  if (genero === 'Sra.') {
+  if (genero === 'Sra. ') {
     message = genero
   } else {
-    if (genero === 'Sx')
+    if (genero === 'Sx ')
       message = genero
   }
 }
@@ -18,7 +18,7 @@ if (genero === 'Sr.') {
 if (edad >= 18) {
   message = message + 'usted es mayor de edad puede ingresar'
 } else {
-  if (genero < 18) {
+  if (edad < 18) {
     message = message + 'usted es menor de edad no puede ingresar'
   }
 }
