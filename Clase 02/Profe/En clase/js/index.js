@@ -88,22 +88,70 @@ console.log('Init app')
 //   console.log('Alguno de los colores de River')
 // }
 
-var color = prompt('Ingresé un color')
+// var color = prompt('Ingresé un color')
 
-switch (color) {
-  case 'red':
-    console.log('Rojo')
-    break
+// switch (color) {
+//   case 'red':
+//     console.log('Rojo')
+//     break
 
-  case 'white':
-    console.log('Blanco')
-    break
+//   case 'white':
+//     console.log('Blanco')
+//     break
 
-  case 'blue':
-    console.log('Azul')
-    break
+//   case 'blue':
+//     console.log('Azul')
+//     break
 
-  default:
-    console.log('Ingresó un color invalido')
-    break
+//   default:
+//     console.log('Ingresó un color invalido')
+//     break
+// }
+
+// var color = prompt('Ingresé un color')
+
+// switch (color) {
+//   case 'red':
+//   case 'blue':
+//     console.log('Es un color oscuro')
+//     console.log('Y es lindo')
+//     break
+
+//   case 'yellow':
+//   case 'rose':
+//   case 'white':
+//     console.log('Es un color claro')
+//     break
+
+//   default:
+//     console.log('Ingresó un color invalido')
+//     break
+// }
+
+var userName
+
+var name1 = 'Pedro'
+
+var name2 = 'Juan'
+
+var message = 'Hola '
+
+if (name1) {
+  message = message + name1 + ' y '
+}
+
+if (name2) {
+  message = message + name2
+}
+
+console.log(message)
+
+if (userName) {
+  if (password) {
+    console.log('Ingresó')
+  } else {
+    console.log('No hay contraseña')
+  }
+} else {
+  console.log('No hay usuario')
 }
