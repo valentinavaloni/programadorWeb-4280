@@ -108,3 +108,11 @@ console.log('Estoy aquí!')
 // Trabajando re tranquilo local
 
 // Test
+
+// Mini ejercicio
+
+var password
+
+do {
+  password = prompt('Ingresá contraseña')
+} while (!password)
