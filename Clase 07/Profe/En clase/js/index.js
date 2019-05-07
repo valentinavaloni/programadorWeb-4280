@@ -94,7 +94,7 @@ if (colorIndex !== -1) {
     'Ingresé un el nuevo color para reemplazar ' + newColor
   )
 
-  parsedKitty.colors[colorIndex] = newColor2
+
 }
 
 // Convierto a JSON
