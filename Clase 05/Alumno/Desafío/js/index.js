@@ -19,11 +19,6 @@ var oldStudents = [
   }
 ]
 
-  * @param { string } firstName
-    * @param { string } lastName
-      * @param { number } dni
-        * @param { string } email
-          * /
 function Student(firstName, lastName, dni, email) {
 
   var id = dni
