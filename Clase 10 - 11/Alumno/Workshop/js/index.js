@@ -100,16 +100,9 @@ function validateRequired (event) {
 }
 
 function validateDni (event) {
-  // Encuetro que nodo disparó el evento blur
   var inputNode = event.target
-
-  // Busco que valor tenía el nodo en ese momento
   var value = inputNode.value
-
-  // Trato de convertir a número
   var parsedValue = parseInt(value, 10)
-
-  // Verifico si existe el DNI en los datos guardados en LS
   var dniExists
 
   if (searchStudentIndexByDni(value, studentsList) !== -1) {
@@ -119,11 +112,9 @@ function validateDni (event) {
   }
 
   if (!value || isNaN(parsedValue) || parsedValue <= 0 || dniExists) {
-    // Caso invalido
     inputNode.classList.add('is-invalid')
     inputNode.classList.remove('is-valid')
   } else {
-    // Caso valido
     inputNode.classList.add('is-valid')
     inputNode.classList.remove('is-invalid')
   }
@@ -159,40 +150,30 @@ function validateAddButton () {
 }
 
 function setLocalList (key, list) {
-  // Verifico los parámetros recibidos
   if (typeof key === 'string' && Array.isArray(list)) {
-    // Convierto a JSON el array
     var strList = JSON.stringify(list)
-    // Guardo en el localStorage pisando la key
     localStorage.setItem(key, strList)
   } else {
   }
 }
 
 function getLocalList (key) {
-  // Valido que reciba un string
   if (typeof key === 'string') {
-    // Trato de recuperar la lista del localStorage
     var localList = localStorage.getItem(key)
     if (localList) {
-      // Si la lista existía la tranformo en JavaScript y la devuelvo
       var parsedList = JSON.parse(localList)
       return parsedList
     } else {
-      // Sino existía devuelvo un array vacío
       return []
     }
   }
 }
 
 function createStudentNode (newStudent) {
-  // Creo el nodo li
   var liNode = document.createElement('li')
 
-  // Le setteo el id al nodo
   liNode.id = newStudent.dni
 
-  // Le setteo la clase al nodo
   liNode.className = 'list-group-item'
 
   var fullName = ''
@@ -205,7 +186,6 @@ function createStudentNode (newStudent) {
     fullName = newStudent.lastName
   }
 
-  // Le agrego el contenido al nodo
   liNode.innerHTML =
     '<h1>' +
     fullName +
@@ -217,7 +197,6 @@ function createStudentNode (newStudent) {
   liNode.className = 'list-group-item'
   liNode.id = newStudent.dni
 
-  // Devuelvo solo el nodo con todos sus datos
   return liNode
 }
 
