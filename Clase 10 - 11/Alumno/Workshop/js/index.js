@@ -12,8 +12,9 @@ var deleteStudentButton = document.getElementById('deleteStudentButton')
 var mainListNode = document.getElementById('mainList')
 var emailInput = document.getElementById('email')
 var lastNameInput = document.getElementById('lastName')
-var searchInput = document.getElementById('searchText')
+var searchTextInput = document.getElementById('searchText')
 var searchStudentButton = document.getElementById('searchStudentButton')
+var searchListNode = document.getElementById('searchList')
 
 for (var i = 0; i < studentsList.length; i++) {
   var student = studentsList[i]
@@ -46,8 +47,7 @@ function deleteStudent () {
 
       deleteDniInput.value = ''
     } else {
-      var massage = 'Usuario no existe'
-      return massage
+      alert('Usuario NO existente')
     }
   }
 }
@@ -60,7 +60,7 @@ function addStudent () {
 
   var student = {
     dni: dniValue,
-    firstName: firstName,
+    firstName: firstNameValue,
     email: emailValue,
     lastName: lastNameValue
   }
@@ -77,11 +77,11 @@ function addStudent () {
   emailInput.value = ''
   lastNameInput.value = ''
 
-  addStudentButton.disabled = true
-
   firstNameInput.classList.remove('is-valid')
   dniInput.classList.remove('is-valid')
   emailInput.classList.remove('is-valid')
+
+  addStudentButton.disabled = true
 }
 
 function validateRequired (event) {
@@ -153,7 +153,6 @@ function setLocalList (key, list) {
   if (typeof key === 'string' && Array.isArray(list)) {
     var strList = JSON.stringify(list)
     localStorage.setItem(key, strList)
-  } else {
   }
 }
 
@@ -194,8 +193,6 @@ function createStudentNode (newStudent) {
     '</h3><p>E-mail:' +
     newStudent.email +
     '</p>'
-  liNode.className = 'list-group-item'
-  liNode.id = newStudent.dni
 
   return liNode
 }
@@ -212,28 +209,44 @@ function searchStudentIndexByDni (dni, studentsList) {
   return index
 }
 function searchStudent () {
-  var searchValue = searchInput.value
-  if (searchValue) {
-    var index = searchStudentIndexByText(searchValue, studentsList)
-    if (index !== -1) {
-      console.log(index)
-      var searchStudent = studentsList[index]
-      var liSearch = createStudentNode(searchStudent)
-      searchListNode.appendChild(liSearch)
+  var text = searchTextInput.value
+
+  var index = searchStudentIndexByText(text, studentsList)
+
+  searchListNode.innerHTML = ''
+
+  if (index !== -1) {
+    var searchStudent = studentsList[index]
+    var liSearch = createStudentNode(searchStudent)
+    searchListNode.appendChild(liSearch)
+  }
+}
+
+function searchStudentIndexByText (text, studentsList) {
+  var index = -1
+  for (var i = 0; i < studentsList.length; i++) {
+    var student = studentsList[i]
+    if (
+      includesText(text, student.firstName) ||
+      includesText(text, student.lastName)
+    ) {
+      index = i
+      break
     }
   }
+  return index
+}
 
-  function searchStudentIndexByText (text, studentsList) {
-    var index = -1
-    for (var i = 0; i < studentsList.length; i++) {
-      var student = studentsList[i].firstName
-      var upperStudent = student.toUpperCase()
-      var upperText = text.toUpperCase()
-      if (upperStudent === upperText) {
-        index = i
-        break
-      }
+function includesText (text, baseText) {
+  if (typeof text === 'string' && typeof baseText === 'string') {
+    var textUpperCase = text.toUpperCase()
+    var baseTextUpperCase = baseText.toUpperCase()
+    if (baseTextUpperCase.indexOf(textUpperCase) !== -1) {
+      return true
+    } else {
+      return false
     }
-    return index
+  } else {
+    return false
   }
 }
