@@ -1,6 +1,6 @@
 var emailInput = $('#email')
 
-emailInput.blur(validateEmailField)
+emailInput.blur(validateEmail)
 
 function validateEmail (event) {
   var inputNode = $(this)
