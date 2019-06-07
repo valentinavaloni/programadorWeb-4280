@@ -1,5 +1,6 @@
 import crossroads from 'crossroads'
 import contactController from './controllers/contactController'
+import localStorageController from './controllers/localStorageController'
 
 function router () {
   crossroads.addRoute('', function () {
@@ -15,9 +16,7 @@ function router () {
   })
 
   crossroads.addRoute('#/local-storage', function () {
-    $('#root').load('./partials/local-storage.html', function () {
-      console.log('LS page')
-    })
+    $('#root').load('./partials/local-storage.html', localStorageController)
   })
 
   crossroads.addRoute('#/contact', function () {
