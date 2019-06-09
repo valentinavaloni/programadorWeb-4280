@@ -50,4 +50,4 @@ function postData (url, data, cbk) {
     })
 }
 
-export {getData, postData}
+export {getData, getAllList, postData}

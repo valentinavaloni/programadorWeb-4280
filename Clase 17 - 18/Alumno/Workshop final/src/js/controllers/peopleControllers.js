@@ -1,6 +1,6 @@
 import { getLocalList, setLocalList } from '../utils/localStorage'
 
-import { genderTranslate, eyeColorTranslate } from '../utils/translates'
+import translates from '../utils/translates'
 
 import { searchPeopleUrl } from '../utils/sarchPeople'
 

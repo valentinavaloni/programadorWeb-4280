@@ -1,10 +1,11 @@
 import { getLocalList, setLocalList } from '../utils/localStorage'
 import translates from '../utils/translates'
+import { searchPeopleUrl } from '../utils/sarchPeople'
 
 function localStorageController () {
   var lang = 'es'
 
-  var localList = getLocalList('peopleList')
+  var peopleList = getLocalList('peopleList')
 
   var tableBody = $('#tableBody')
 
@@ -42,7 +43,7 @@ function localStorageController () {
       if (index !== -1) {
         localList.splice(index, 1)
 
-        setLocalList('peopleList', localList)
+        setLocalList('peopleList', peopleList)
       }
 
       trNode.hide(300, function () {
@@ -61,18 +62,5 @@ function localStorageController () {
  * @param {Array} studentsList Array de estudiantes
  * @returns {number} posición del estudiante en el Array, si no lo encuentra -1
  */
-
-function searchPersonIndexById (id, peopleList) {
-  var index = -1
-  for (var i = 0; i < peopleList.length; i++) {
-    var person = peopleList[i]
-    var personId = person.url.split('/')[5]
-    if (personId === id) {
-      index = i
-      break
-    }
-  }
-  return index
-}
 
 export default localStorageController
