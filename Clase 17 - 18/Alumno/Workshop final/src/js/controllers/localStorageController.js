@@ -25,7 +25,7 @@ function localStorageController () {
         ' cm</td><td>' +
         person.mass +
         ' kg</td><td>' +
-        person.eye_color +
+        translates[lang]['eye_color'][person.eye_color] +
         '</td><td><button id="' +
         id +
         '" type="button" class="btn btn-danger">Eliminar</button></td></tr>'

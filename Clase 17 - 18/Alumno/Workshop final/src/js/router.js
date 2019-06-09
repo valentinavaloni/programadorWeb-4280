@@ -10,11 +10,10 @@ function router () {
   })
 
   crossroads.addRoute('#/people', function () {
-    $('#root').load('./partials/people.html', function () {
+    $('#root').load('./partials/people.html', peopleController) 
       console.log('People page')
     })
-  })
-
+ 
   crossroads.addRoute('#/local-storage', function () {
     $('#root').load('./partials/local-storage.html', localStorageController)
   })

@@ -1,3 +1,5 @@
+import { getAllList } from '../utils/apiData'
+
 function contactController () {
   // Busco los nodos que voy a utilizar
   var firstNameInputNode = $('#firstName')
