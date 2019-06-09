@@ -8,8 +8,8 @@ function localStorageController () {
 
   var tableBody = $('#tableBody')
 
-  for (var i = 0; i < localList.length; i++) {
-    var person = localList[i]
+  for (var i = 0; i < peopleList.length; i++) {
+    var person = peopleList[i]
 
     var id = person.url.split('/')[5]
 

@@ -7,6 +7,7 @@ import { searchPeopleUrl } from '../utils/sarchPeople'
 import { getData, getAllList } from '../utils/apiData'
 
 function peopleController () {
+  
   var peopleApiList = []
 
   var peopleLocalList = getLocalList('peopleList')
@@ -37,6 +38,7 @@ function peopleController () {
   }
 
   function appendPeople (peopleList) {
+    var lang = 'es'
     var person
 
     for (var i = 0; i < peopleList.length; i++) {
@@ -52,39 +54,39 @@ function peopleController () {
           '</th><td>' +
           person.name +
           '</td><td>' +
-          genderTranslate(person.gender) +
+          translates[lang]['gender'][person.gender] +
           '</td><td>' +
           person.height +
           ' cm</td><td>' +
           person.mass +
           ' kg</td><td>' +
-          eyeColorTranslate(person.eye_color) +
+          translates[lang]['eye_color'][person.eye_color] +
           '</td><td><button type="button" class="btn btn-success">Guardar</button></td></tr>'
       )
 
-      // $('#' + order).click(function () {
-      //   var rowNode = $(this)
+      $('#' + order).click(function () {
+        var rowNode = $(this)
 
-      //   var id = rowNode.attr('id')
+        var id = rowNode.attr('id')
 
-      //   var indexLocal = searchPeopleUrl(
-      //     'https://swapi.co/api/people/' + id + '/',
-      //     peopleLocalList
-      //   )
+        var indexLocal = searchPeopleUrl(
+          'https://swapi.co/api/people/' + id + '/',
+          peopleLocalList
+        )
 
-      //   if (indexLocal === -1) {
-      //     var indexApi = searchPeopleUrl(
-      //       'https://swapi.co/api/people/' + id + '/',
-      //       peopleApiList
-      //     )
+        if (indexLocal === -1) {
+          var indexApi = searchPeopleUrl(
+            'https://swapi.co/api/people/' + id + '/',
+            peopleApiList
+          )
 
-      //     peopleLocalList.push(peopleApiList[indexApi])
+          peopleLocalList.push(peopleApiList[indexApi])
 
-      //     setLocalList('peopleList', peopleLocalList)
+          setLocalList('peopleList', peopleLocalList)
 
-      //     rowNode.remove()
-      //   }
-      // })
+          rowNode.remove()
+        }
+      })
     }
   }
 }

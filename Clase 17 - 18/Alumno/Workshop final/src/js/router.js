@@ -1,6 +1,7 @@
 import crossroads from 'crossroads'
 import contactController from './controllers/contactController'
 import localStorageController from './controllers/localStorageController'
+import peopleController from './controllers/peopleController'
 
 function router () {
   crossroads.addRoute('', function () {
