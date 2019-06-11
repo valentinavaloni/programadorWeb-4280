@@ -1,4 +1,4 @@
-import { getAllList } from '../utils/apiData'
+// import { getAllList } from '../utils/apiData'
 
 function contactController () {
   // Busco los nodos que voy a utilizar

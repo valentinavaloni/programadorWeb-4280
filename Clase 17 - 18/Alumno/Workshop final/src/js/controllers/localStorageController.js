@@ -38,10 +38,10 @@ function localStorageController () {
       var id = $(this).attr('id')
       var trNode = $(this).parent().parent()
 
-      var index = searchPersonIndexById(id, localList)
+      var index = searchPeopleUrl(id, peopleList)
 
       if (index !== -1) {
-        localList.splice(index, 1)
+        peopleList.splice(index, 1)
 
         setLocalList('peopleList', peopleList)
       }

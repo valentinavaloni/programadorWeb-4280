@@ -1,15 +1,17 @@
 var translates = {
     es: {
       gender: {
-        male: 'Chongo',
-        female: 'Chonga',
-        'n/a': 'Chonge'
+        male: 'Mujer',
+        female: 'Hombre',
+        'n/a': 'N/a'
       },
       eye_color: {
         blue: 'Azul',
         yellow: 'Amarillo',
         red: 'Rojo',
-        brown: 'Marron'
+        brown: 'Marron',
+        bluegray: 'Azul-Gris',
+
       }
     }
   }
