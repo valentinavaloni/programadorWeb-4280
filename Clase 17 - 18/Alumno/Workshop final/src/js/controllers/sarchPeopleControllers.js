@@ -9,7 +9,7 @@ import { getData } from '../utils/apiData'
 function searchController () {
   searchPeople()
 
-  var searchButtonNode = $('#searchButton')
+  // var searchButtonNode = $('#searchButton')
 
   searchButtonNode.click(searchPeople)
 }
