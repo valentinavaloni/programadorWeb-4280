@@ -1,8 +1,9 @@
-function searchPeopleUrl (url, peopleList) {
+function searchPersonIndexById (id, peopleList) {
   var index = -1
   for (var i = 0; i < peopleList.length; i++) {
     var person = peopleList[i]
-    if (person.url === url) {
+    var personId = person.url.split('/')[5]
+    if (personId === id) {
       index = i
       break
     }
@@ -10,4 +11,4 @@ function searchPeopleUrl (url, peopleList) {
   return index
 }
 
-export { searchPeopleUrl }
+export {searchPersonIndexById}

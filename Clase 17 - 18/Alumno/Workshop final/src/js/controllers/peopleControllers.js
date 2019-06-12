@@ -1,9 +1,6 @@
 import { getLocalList, setLocalList } from '../utils/localStorage'
-
+import { searchPersonIndexById} from '../utils/search'
 import translates from '../utils/translates'
-
-import { searchPeopleUrl } from '../utils/sarchPeople'
-
 import { getData, getAllList } from '../utils/apiData'
 
 function peopleController () {
@@ -64,18 +61,19 @@ function peopleController () {
           '</td><td><button type="button" class="btn btn-success">Guardar</button></td></tr>'
       )
 
+
       $('#' + order).click(function () {
         var rowNode = $(this)
 
         var id = rowNode.attr('id')
 
-        var indexLocal = searchPeopleUrl(
+        var indexLocal = searchPeople(
           'https://swapi.co/api/people/' + id + '/',
           peopleLocalList
         )
 
         if (indexLocal === -1) {
-          var indexApi = searchPeopleUrl(
+          var indexApi = searchPeople(
             'https://swapi.co/api/people/' + id + '/',
             peopleApiList
           )
