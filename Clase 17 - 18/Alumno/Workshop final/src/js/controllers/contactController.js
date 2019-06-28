@@ -1,4 +1,4 @@
-import { postData } from '../utils/ajax'
+import { postData } from '../utils/apiData'
 
 function contactController () {
   var firstNameInputNode = $('#firstName')

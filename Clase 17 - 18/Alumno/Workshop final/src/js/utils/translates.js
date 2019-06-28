@@ -1,35 +1,33 @@
-function genderTranslate (gender) {
-  switch (gender) {
-    case 'male':
-      return 'Masculino'
-      break
-    case 'female':
-      return 'Femenino'
-      break
-    case 'n/a':
-      return 'No aplica'
-      break
-    default:
-      return 'No se'
-      break
+var translates = {
+  es: {
+    gender: {
+      male: 'Hombre',
+      female: 'Mujer',
+      'n/a': 'Indefinido',
+      undefined: 'Indefinido',
+      hermaphrodite: 'Hermafrodita',
+      none: 'ninguno'
+    },
+    eyeColor: {
+      yellow: 'Amarillo',
+      blue: 'Azul',
+      red: 'Rojo',
+      brown: 'Marrón',
+      'blue-gray': 'Azul grisaceo',
+      black: 'Negro',
+      orange: 'Naranja',
+      hazel: 'Avellana',
+      pink: 'Rosa',
+      unknown: 'Indefinido',
+      'red, blue': 'Rojo y Azul',
+      gold: 'Dorado',
+      'green, yellow': 'Verde y Amarillo',
+      white: 'Blanco',
+      dark: 'Oscuro'
+
+    }
   }
 }
 
-function eyeColorTranslate (eyeColor) {
-  switch (eyeColor) {
-    case 'blue':
-      return 'Azul'
-      break
-    case 'yellow':
-      return 'Amarillo'
-      break
-    case 'red':
-      return 'Rojo'
-      break
-    default:
-      return eyeColor
-      break
-  }
-}
 
-export { genderTranslate, eyeColorTranslate }
+export default translates

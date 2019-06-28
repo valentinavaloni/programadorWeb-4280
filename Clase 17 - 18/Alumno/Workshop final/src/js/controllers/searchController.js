@@ -4,7 +4,7 @@ import { genderTranslate, eyeColorTranslate } from '../utils/translates'
 
 import { searchPeopleIndexByUrl } from '../utils/search'
 
-import { getData } from '../utils/ajax'
+import { getData } from '../utils/apiData'
 
 function searchController () {
   searchPeople()
