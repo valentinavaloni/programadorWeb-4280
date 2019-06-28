@@ -36,5 +36,6 @@
 
     // Disable editor lint, use standard lint
     "javascript.validate.enable": false,
-    "languageTool.language": "es"
+    "languageTool.language": "es",
+    "liveServer.settings.port": 5501
 }

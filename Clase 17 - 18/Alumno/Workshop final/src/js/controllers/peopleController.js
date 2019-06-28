@@ -1,10 +1,12 @@
 import { getLocalList, setLocalList } from '../utils/localStorage'
-import { searchPersonIndexById} from '../utils/search'
-import translates from '../utils/translates'
-import { getData, getAllList } from '../utils/apiData'
+
+import { genderTranslate, eyeColorTranslate } from '../utils/translates'
+
+import { searchPeopleIndexByUrl } from '../utils/search'
+
+import { getData } from '../utils/ajax'
 
 function peopleController () {
-  
   var peopleApiList = []
 
   var peopleLocalList = getLocalList('peopleList')
@@ -35,7 +37,6 @@ function peopleController () {
   }
 
   function appendPeople (peopleList) {
-    var lang = 'es'
     var person
 
     for (var i = 0; i < peopleList.length; i++) {
@@ -51,29 +52,28 @@ function peopleController () {
           '</th><td>' +
           person.name +
           '</td><td>' +
-          translates[lang]['gender'][person.gender] +
+          genderTranslate(person.gender) +
           '</td><td>' +
           person.height +
           ' cm</td><td>' +
           person.mass +
           ' kg</td><td>' +
-          translates[lang]['eye_color'][person.eye_color] +
+          eyeColorTranslate(person.eye_color) +
           '</td><td><button type="button" class="btn btn-success">Guardar</button></td></tr>'
       )
-
 
       $('#' + order).click(function () {
         var rowNode = $(this)
 
         var id = rowNode.attr('id')
 
-        var indexLocal = searchPeople(
+        var indexLocal = searchPeopleIndexByUrl(
           'https://swapi.co/api/people/' + id + '/',
           peopleLocalList
         )
 
         if (indexLocal === -1) {
-          var indexApi = searchPeople(
+          var indexApi = searchPeopleIndexByUrl(
             'https://swapi.co/api/people/' + id + '/',
             peopleApiList
           )
