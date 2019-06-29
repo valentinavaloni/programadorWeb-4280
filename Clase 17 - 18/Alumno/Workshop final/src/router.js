@@ -1,9 +1,9 @@
 import crossroads from 'crossroads'
 
-import contactController from './controllers/contactController'
-import localStorageController from './controllers/localStorageController'
-import searchController from './controllers/searchController'
-import peopleController from './controllers/peopleController'
+import contactController from './js/controllers/contactController'
+import localStorageController from './js/controllers/localStorageController'
+import searchController from './js/controllers/searchController'
+import peopleController from './js/controllers/peopleController'
 
 function router () {
   crossroads.addRoute('#/search', function () {
