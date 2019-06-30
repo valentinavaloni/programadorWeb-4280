@@ -1,9 +1,11 @@
 import { getLocalList, setLocalList } from '../utils/localStorage'
-import translates from '../utils/translate'
-import { searchPersonIndexById } from '../utils/search'
 
-function localStorageController () {
-  console.log('localStorageController successfully loaded')
+import translate from '../utils/translate'
+
+import { searchPeopleIndexByUrl } from '../utils/search'
+
+function lsController () {
+  console.log('lsController successfully loaded')
 
   var localPeople = getLocalList('peopleList')
 
@@ -63,4 +65,4 @@ function localStorageController () {
   }
 }
 
-export default localStorageController
+export default lsController

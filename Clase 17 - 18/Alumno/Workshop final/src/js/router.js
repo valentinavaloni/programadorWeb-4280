@@ -1,40 +1,27 @@
-import crossroads from 'crossroads' //Está instalado por default en algun lado en node modules.
-import contactController from './controllers/contactController'
-import localStorageController from './controllers/localStorageController'
-import getApiList from './controllers/peopleController'
+import crossroads from 'crossroads'
+
+import homeController from './controllers/homeController'
 import peopleController from './controllers/peopleController'
+import contactController from './controllers/contactController'
+import lsController from './controllers/lsController'
 
-function router() {
-  crossroads.addRoute('', function() {
-    console.log('Home page')
-    //Al lado de load le digo donde esta el pedacito de HTML que tiene que traer
-    $('#root').load(
-      './partials/home.html',
-      function() //Cuando se termina de cargar este HTML se llama a  la funcion callback
-      {
-        console.log('Se cargo la home')
-      }
-    )
-  })
+crossroads.addRoute('/', function () {
+  $('#root').load('./partials/home.html', homeController)
+})
 
-  crossroads.addRoute('#/people', function() {
-    $('#root').load('./partials/people.html', peopleController)
-  })
+crossroads.addRoute('#/people', function () {
+  $('#root').load('./partials/people.html', peopleController)
+})
 
-  crossroads.addRoute('#/local-storage', function() {
-    $('#root').load('./partials/local-storage.html', localStorageController)
-  })
-
-  crossroads.addRoute('#/contact', function() {
-    $('#root').load('./partials/contact.html', contactController)
-  })
-
-  // En cada cambio del # va a verificar las rutas
-  $(window).on('hashchange', function() {
-    crossroads.parse(window.location.hash)
-  })
-
+crossroads.addRoute('#/local-storage', function () {
+  $('#root').load('./partials/local-storage.html', lsController)
+})
+crossroads.addRoute('#/contact', function () {
+  $('#root').load('./partials/contact.html', contactController)
+})
+// En cada cambio del # va a verificar las rutas
+$(window).on('hashchange', function () {
   crossroads.parse(window.location.hash)
-}
+})
 
-export default router
+crossroads.parse(window.location.hash)

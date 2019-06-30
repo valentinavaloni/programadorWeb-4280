@@ -1,7 +1,10 @@
-import { getData} from '../utils/apiData'
+import { getData } from '../utils/ajax'
+
+import translate from '../utils/translate'
+
+import { searchPeopleIndexByUrl } from '../utils/search'
+
 import { getLocalList, setLocalList } from '../utils/localStorage'
-import translates from '../utils/translate'
-import { searchPersonIndexById, searchIndexByUrl } from '../utils/search'
 
 function peopleController () {
   console.log('peopleController successfully loaded')

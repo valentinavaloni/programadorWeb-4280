@@ -1,17 +1,29 @@
 var translates = {
   es: {
     gender: {
-      male: 'Chongo',
-      female: 'Chonga',
-      'n/a': 'Chonge'
+      male: 'Hombre',
+      female: 'Mujer',
+      'n/a': 'Indefinido',
+      undefined: 'Indefinido',
+      hermaphrodite: 'Hermafrodita',
+      none: 'ninguno'
     },
-    eye_color: {}
-  },
-  pt: {
-    gender: {
-      male: 'Chonguiño',
-      female: 'Chonguiña',
-      'n/a': 'Chonguiñe'
+    eyeColor: {
+      yellow: 'Amarillo',
+      blue: 'Azul',
+      red: 'Rojo',
+      brown: 'Marrón',
+      'blue-gray': 'Azul grisaceo',
+      black: 'Negro',
+      orange: 'Naranja',
+      hazel: 'Avellana',
+      pink: 'Rosa',
+      unknown: 'Indefinido',
+      'red, blue': 'Rojo y Azul',
+      gold: 'Dorado',
+      'green, yellow': 'Verde y Amarillo',
+      white: 'Blanco',
+      dark: 'Oscuro'
     }
   }
 }
