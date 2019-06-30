@@ -1,6 +1,6 @@
 import { getLocalList, setLocalList } from '../utils/localStorage'
 
-import translates from '../utils/translate'
+import translate from '../utils/translate'
 
 import { searchPeopleIndexByUrl } from '../utils/search'
 
@@ -23,22 +23,24 @@ function lsController () {
     var id = url.replace('/', '')
 
     tableBodyNode.append(
-        '<tr><th scope="row">' +
-          id +
-          '</th><td>' +
-          person.name +
-          '</td><td>' +
-          translates['es']['gender'][person.gender] +
-          '</td><td>' +
-          person.height +
-          ' cm</td><td>' +
-          person.mass +
-          ' kg</td><td>' +
-          translates['es']['eyeColor'][person.eye_color] +
-          '</td><td><button id="' +
-          id +
-          '" type="button" class="btn btn-danger">Eliminar</button></td></tr>'
-      )
+      '<tr id="' +
+        id +
+        '"><th scope="row">' +
+        id +
+        '</th><td>' +
+        person.name +
+        '</td><td>' +
+        translate['es']['gender'][person.gender] +
+        '</td><td>' +
+        person.height +
+        ' CM</td><td>' +
+        person.mass +
+        ' KG</td> <td>' +
+        translate['es']['eyeColor'][person.eyeColor] +
+        '</td> <td> <button type="button" id = "button' +
+        id +
+        '" class="btn btn-danger">Eliminar</button></td></tr>'
+    )
     $('#button' + id).click(function () {
       var button = $(this)
 
