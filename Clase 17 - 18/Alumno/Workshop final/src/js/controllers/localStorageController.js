@@ -1,53 +1,66 @@
 import { getLocalList, setLocalList } from '../utils/localStorage'
-
-import { genderTranslate, eyeColorTranslate } from '../utils/translates'
-
-import { searchPeopleIndexByUrl } from '../utils/search'
+import translates from '../utils/translate'
+import { searchPersonIndexById } from '../utils/search'
 
 function localStorageController () {
-  var peopleList = getLocalList('peopleList')
+  console.log('localStorageController successfully loaded')
 
-  var tableBody = $('#tableBody')
+  var localPeople = getLocalList('peopleList')
 
-  for (var i = 0; i < peopleList.length; i++) {
-    var person = peopleList[i]
+  var tableBodyNode = $('#tableBody')
 
-    tableBody.append(
+  var person
+
+  for (var i = 0; i < localPeople.length; i++) {
+    person = localPeople[i]
+
+    var url = person.url
+
+    url = url.replace('https://swapi.co/api/people/', '')
+
+    var id = url.replace('/', '')
+
+    tableBodyNode.append(
       '<tr id="' +
-        person.url +
-        '"><th scope="row" >' +
-        (i + 1) +
+        id +
+        '"><th scope="row">' +
+        id +
         '</th><td>' +
         person.name +
         '</td><td>' +
-        genderTranslate(person.gender) +
+        translate(person.gender) +
         '</td><td>' +
-        person.height +
-        ' cm</td><td>' +
-        person.mass +
-        ' kg</td><td>' +
-        eyeColorTranslate(person.eye_color) +
-        '</td><td><button type="button" class="btn btn-danger">Eliminar</button></td></tr>'
+        translate(person.height) +
+        ' CM</td><td>' +
+        translate(person.mass) +
+        ' KG</td> <td>' +
+        translate(person.eye_color) +
+        '</td> <td> <button type="button" id = "button' +
+        id +
+        '" class="btn btn-danger">Eliminar</button></td></tr>'
     )
+    $('#button' + id).click(function () {
+      var button = $(this)
+
+      console.log('click')
+
+      var buttonId = button.attr('id')
+
+      var id = buttonId.replace('button', '')
+
+      var newUrl = 'https://swapi.co/api/people/' + id + '/'
+
+      var index = searchPeopleIndexByUrl(newUrl, localPeople)
+
+      if (index !== -1) {
+        localPeople.splice(index, 1)
+
+        setLocalList('peopleList', localPeople)
+
+        button.parent().parent().remove()
+      }
+    })
   }
-
-  $('.btn-danger').click(function () {
-    var buttonNode = $(this)
-
-    var rowNode = buttonNode.parent().parent()
-
-    var id = rowNode.attr('id')
-
-    var index = searchPeopleUrl(id, peopleList)
-
-    if (index !== -1) {
-      peopleList.splice(index, 1)
-
-      setLocalList('peopleList', peopleList)
-
-      rowNode.remove()
-    }
-  })
 }
 
 export default localStorageController

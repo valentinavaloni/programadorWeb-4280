@@ -1,6 +1,6 @@
 import { postData } from '../utils/apiData'
 
-function contactController () {
+function contactController() {
   var firstNameInputNode = $('#firstName')
   var emailInputNode = $('#email')
   var commentsInputNode = $('#comments')
@@ -12,7 +12,13 @@ function contactController () {
 
   commentsInputNode.one('blur', validateEmtpyField)
 
-  function validateEmtpyField (event) {
+  /**
+   * validateEmtpyField es una función que el campo tenga un valor
+   *
+   * @param {HTMLEvent} event
+   */
+
+  function validateEmtpyField(event) {
     var inputNode = $(this)
 
     var errorText = ''
@@ -41,7 +47,12 @@ function contactController () {
     validateButton()
   }
 
-  function validateEmailField (event) {
+  /**
+   * validateEmailField es una función que valida que el campo sea email
+   *
+   * @param {HTMLEvent} event
+   */
+  function validateEmailField(event) {
     var inputNode = $(this)
 
     var errorText = ''
@@ -80,7 +91,7 @@ function contactController () {
     validateButton()
   }
 
-  submitButtonNode.click(function () {
+  submitButtonNode.click(function() {
     var firstName = firstNameInputNode.val()
     var email = emailInputNode.val()
     var comments = commentsInputNode.val()
@@ -91,14 +102,18 @@ function contactController () {
       comments: comments
     }
 
-    postData('./simpleEmail.php', data, function (error, data) {
+    postData('./simpleEmail.php', data, function(error, data) {
       if (!error) {
         window.location.hash = '#/contact/greetings'
       }
     })
   })
 
-  function validateButton () {
+  /**
+   * validateButton habilita el botón de submit si existen
+   * al menos cuatro nodos con la clase is-valid
+   */
+  function validateButton() {
     var validInputNodes = $('.is-valid')
 
     if (validInputNodes.length === 3) {

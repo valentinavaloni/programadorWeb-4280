@@ -1,13 +1,14 @@
 function searchPeopleIndexByUrl (url, peopleList) {
-  var index = -1
+  var person
+
   for (var i = 0; i < peopleList.length; i++) {
-    var person = peopleList[i]
-    if (person.url === url) {
-      index = i
-      break
+    person = peopleList[i]
+    if (url === person.url) {
+      return i
     }
   }
-  return index
+
+  return -1
 }
 
 export { searchPeopleIndexByUrl }

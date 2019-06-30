@@ -24,10 +24,8 @@ var translates = {
       'green, yellow': 'Verde y Amarillo',
       white: 'Blanco',
       dark: 'Oscuro'
-
     }
   }
 }
 
-
-export {genderTranslate, eyeTranslate} 
+export default translates
