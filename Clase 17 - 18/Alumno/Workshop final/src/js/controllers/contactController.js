@@ -1,5 +1,4 @@
 function contactController () {
-  console.log('contactController successfully loaded')
 
   var firstNameInputNode = $('#firstName')
   var emailInputNode = $('#email')

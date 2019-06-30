@@ -1,6 +1,6 @@
 import { getData } from '../utils/ajax'
 
-import translate from '../utils/translate'
+import translates from '../utils/translate'
 
 import { searchPeopleIndexByUrl } from '../utils/search'
 
@@ -58,23 +58,23 @@ function peopleController () {
 
         tableBodyNode.append(
           '<tr id="' +
-            id +
-            '"><th scope="row">' +
-            id +
-            '</th><td>' +
-            person.name +
-            '</td><td>' +
-            translate(person.gender) +
-            '</td><td>' +
-            translate(person.height) +
-            ' CM</td><td>' +
-            translate(person.mass) +
-            ' KG</td> <td>' +
-            translate(person.eye_color) +
-            '</td> <td> ' +
-            addButton +
-            ' </td> </tr>'
-        )
+          peopleId +
+          '"><th scope="row" >' +
+          peopleId +
+          '</th><td>' +
+          person.name +
+          '</td><td>' +
+          translates['es']['gender'][person.gender] +
+          '</td><td>' +
+          person.height +
+          ' cm</td><td>' +
+          person.mass +
+          ' kg</td><td>' +
+          translates['es']['eyeColor'][person.eye_color] +
+          '</td><td>' +
+          addButton +
+          '</td></tr>'
+      )
 
         $('#button' + id).click(function () {
           var button = $(this)

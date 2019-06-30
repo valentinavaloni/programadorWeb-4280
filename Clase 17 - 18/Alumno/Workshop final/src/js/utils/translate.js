@@ -1,4 +1,4 @@
-var translate = {
+var translates = {
   es: {
     gender: {
       male: 'Hombre',
@@ -28,4 +28,4 @@ var translate = {
   }
 }
 
-export default translate
+export default translates
