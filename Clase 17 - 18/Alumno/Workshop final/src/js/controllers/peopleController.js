@@ -1,4 +1,4 @@
-import { getData, getAllList } from '../utils/apiData'
+import { getData} from '../utils/apiData'
 import { getLocalList, setLocalList } from '../utils/localStorage'
 import translates from '../utils/translate'
 import { searchPersonIndexById, searchIndexByUrl } from '../utils/search'

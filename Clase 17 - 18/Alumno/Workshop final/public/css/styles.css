@@ -14,7 +14,7 @@
 body {
   width: 100vw;
   height: 100vh;
-  background-image: url(../img/sw1-900x600.jpg);
+  background-image: url(../img/starWarsVertical.jpg);
   background-position: 50% 25%;
   background-size: cover;
 }

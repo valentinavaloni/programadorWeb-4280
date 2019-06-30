@@ -1,5 +1,3 @@
-import { postData } from '../utils/apiData'
-
 function contactController() {
   var firstNameInputNode = $('#firstName')
   var emailInputNode = $('#email')

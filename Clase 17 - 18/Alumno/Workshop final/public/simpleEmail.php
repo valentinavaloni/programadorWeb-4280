@@ -1,7 +1,7 @@
 <?php
-$to = "valevaloni_95@hotmail.com"; 
-$from = $_POST['email']; 
-$first_name = $_POST['firstName']; 
+$to = "juli_herco@hotmail.com"; // Student e-mail
+$from = $_POST['email']; // This is the sender's Email address
+$first_name = $_POST['firstName']; // This is the sender's Name
 $subject = "Email de Star Wars API";
 $comments = $first_name . ' te dijo: ' . $_POST['comments'];
 $headers = "From:" . $from;
