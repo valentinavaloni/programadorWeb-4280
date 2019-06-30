@@ -30,4 +30,4 @@ var translates = {
 }
 
 
-export default translates
+export {genderTranslate, eyeTranslate} 
